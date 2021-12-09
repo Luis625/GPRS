@@ -34,5 +34,3 @@ def initialize():
     setup_starting_file()
     edit_json()
     return read_json()
-
-print(initialize())
