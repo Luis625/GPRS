@@ -18,19 +18,21 @@ def edit_json():
     json_file = open("json_file.json", "w", encoding='utf-8')
 
     data = dict()
-    data["Nome do dataset"] = input("Escreva o nome do dataset: ")
-    data["Formato dos videos"] = input("Escreva o formato dos videos: ")
-    data["Metricas"] = input("Escreva as métricas a serem utilizadas separadas por vírgula: ").split(",")
-    data["Endereco da referencia"] = input("Escreva o endereço (path) do vídeo de referência. Caso não haja, escreva NaN.")
-    data["Endereco do destino"] = input("Escreva o endereço (path) dos vídeos a serem avaliados.")
+    data["Nome do dataset"] = input("Escreva o nome do dataset:\n")
+    data["Formato dos videos"] = input("Escreva o formato dos videos:\n")
+    data["Metricas"] = input("Escreva as métricas a serem utilizadas separadas por vírgula:\n").split(",")
+    data["Endereco da referencia"] = input("Escreva o endereço (path) do vídeo de referência. Caso não haja, escreva NaN:\n")
+    data["Endereco do destino"] = input("Escreva o endereço (path) dos vídeos a serem avaliados.\n")
+
+    # Mais tarde, fazer função de validação para garantir que as variáveis foram inicializadas corretamente.
 
     json_data = json.dumps(data)
     json_file.write(json_data)
-    json.close()
+    json_file.close()
 
 def initialize():
     setup_starting_file()
     edit_json()
     return read_json()
 
-
+print(initialize())
