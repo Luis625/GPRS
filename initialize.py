@@ -1,7 +1,7 @@
 import json
 
 def setup_starting_file():
-    data = { "Nome do dataset" : "dataset_name", "Formato dos videos" : "video_format", "Metricas" : ["metric_1", "metric_2", "metric_3"], "Endereco da referencia" : "path", "Endereco do destino" : "path"}
+    data = { "Nome do dataset" : "NaN", "Formato dos videos" : "NaN", "Metricas" : ["NaN"], "Endereco da referencia" : "NaN", "Endereco do destino" : "NaN"}
     json_file = open("json_file.json", 'w', encoding='utf-8')
 
     json_data = json.dumps(data)
@@ -15,7 +15,7 @@ def read_json():
     return json_data
 
 def edit_json():
-    json_file = open("json_file.json", encoding='utf-8')
+    json_file = open("json_file.json", "w", encoding='utf-8')
 
     data = dict()
     data["Nome do dataset"] = input("Escreva o nome do dataset: ")
