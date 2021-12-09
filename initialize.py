@@ -26,5 +26,9 @@ def edit_json():
     json_file.write(json_data)
     json.close()
 
-json()
+def initialize():
+    setup_starting_file()
+    edit_json()
+    return read_json()
+
 
