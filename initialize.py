@@ -32,7 +32,7 @@ def edit_json():
 
 def is_json():
     try:
-        open("json_file.json", encoding='utf-8')
+        open("json_file.json", encoding='utf-8').close()
         return True
     except:
         return False
@@ -63,5 +63,3 @@ def initialize(edit = False):
         edit_json()
 
     return read_json()
-
-print(initialize(edit = True))
