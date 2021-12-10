@@ -45,11 +45,11 @@ def initialize(edit = False):
         answer = "NaN"
 
     if is_json():
-        print("O arquivo existente segue o seguinte formato:")
+        print("\nO arquivo existente segue o seguinte formato:")
         print(read_json())
 
         while (answer != "Y" and answer != "N"):
-            answer = input("Deseja continuar com ele? (Y/N)\n")
+            answer = input("\nDeseja continuar com ele? (Y/N)\n")
 
         if answer == "N":
             setup_starting_file()
@@ -57,7 +57,7 @@ def initialize(edit = False):
 
     else:
         if(edit == False):
-            print("Não há arquivo json existente, será necessário criar um.")
+            print("\nNão há arquivo json existente, será necessário criar um.")
 
         setup_starting_file()
         edit_json()
