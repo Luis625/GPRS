@@ -30,7 +30,38 @@ def edit_json():
     json_file.write(json_data)
     json_file.close()
 
-def initialize():
-    setup_starting_file()
-    edit_json()
+def is_json():
+    try:
+        open("json_file.json", encoding='utf-8')
+        return True
+    except:
+        return False
+
+def initialize(edit = False):
+
+    if(edit == False):
+        answer = "Y"
+    else:
+        answer = "NaN"
+
+    if is_json():
+        print("O arquivo existente segue o seguinte formato:")
+        print(read_json())
+
+        while (answer != "Y" and answer != "N"):
+            answer = input("Deseja continuar com ele? (Y/N)\n")
+
+        if answer == "N":
+            setup_starting_file()
+            edit_json()
+
+    else:
+        if(edit == False):
+            print("Não há arquivo json existente, será necessário criar um.")
+
+        setup_starting_file()
+        edit_json()
+
     return read_json()
+
+print(initialize(edit = True))
